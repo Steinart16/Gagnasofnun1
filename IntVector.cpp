@@ -31,6 +31,19 @@ IntVector::IntVector(int size, int value) {
     ///array = tmpArray;
 }
 
+void IntVector::doubleArray()
+{
+    capacity *= 2;
+    int* tmpArray = new int[capacity];
+
+    for(int i = 0; i < count; i++)
+    {
+        tmpArray[i] = array[i];
+    }
+    delete[] array;
+    array = tmpArray;
+}
+
 IntVector::IntVector(const IntVector& vec)
     : capacity(vec.capacity), count(vec.count) {
     array = new int[capacity];
@@ -53,6 +66,15 @@ IntVector::~IntVector() {
 
 void IntVector::push_back(int elem) {
     // TODO: Implement
+
+    if(count == capacity)
+    {
+        doubleArray();
+    }
+
+    array[count] = elem;
+    count++;
+
 }
 
 void IntVector::insert(int index, int elem) {

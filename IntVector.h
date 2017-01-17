@@ -27,6 +27,9 @@ class IntVector
 		// Initializes an empty vector.
 		IntVector();
 
+        // Doubles the array size
+        void doubleArray();
+
 		// Initializes a vector with 'size' copies of the element 'value'.
 		// If 'size' is less than 0, the initalized vector is empty.
 		IntVector(int size, int value = 0);
@@ -55,6 +58,7 @@ class IntVector
 
 		// Appends elem to the vector.
 		void push_back(int elem);
+
 		// Removes the last element of the vector and returns it.
 		// If the vector is empty, the function throws
 		// EmptyException.
