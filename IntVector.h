@@ -36,6 +36,7 @@ class IntVector
 		// If index is out of range, the function throws
 		// IndexOutOfRangeException.
 		int  at(int index) const;
+
 		// Sets the value at position 'index' to 'elem'.
 		// If index is out of range, the function throws
 		// IndexOutOfRangeException.
@@ -43,6 +44,7 @@ class IntVector
 
 		// Returns the size of the array.
 		int  size() const;
+
 		// Returns true if and only if the array contains no elements.
 		bool empty() const;
 

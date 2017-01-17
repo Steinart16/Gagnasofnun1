@@ -7,10 +7,22 @@ using namespace std;
 
 IntVector::IntVector() {
     // TODO: Implement
+    count = 0;
+    capacity = INITIAL_CAPACITY;
+    array = new int[capacity];
 }
 
 IntVector::IntVector(int size, int value) {
     // TODO: Implement
+    capacity *= 2;
+    int* tmpArray = new int[capacity];
+
+    for(int i = 0; i < size; i++)
+    {
+        tmpArray[i] = array[i];
+    }
+    delete [] array;
+    array = tmpArray;
 }
 
 IntVector::IntVector(const IntVector& vec)
@@ -39,16 +51,19 @@ void IntVector::insert(int index, int elem) {
 
 int IntVector::at(int index) const {
     // TODO: Implement
-    return 0;
+
+    return array[index];
 }
 
 void IntVector::set_value_at(int index, int elem) {
     // TODO: Implement
+    array[index] = elem;
 }
 
 int IntVector::size() const {
     // TODO: Implement
-    return 0;
+
+    return count;
 }
 
 bool IntVector::empty() const {
