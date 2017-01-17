@@ -12,7 +12,7 @@ int main()
 
     cout << "Second vector:" << endl;
     cout << v2 << endl;
-
+/*
     for (int i = 0; i < v2.size(); i++)
     {
         v2[i] = i;
@@ -65,5 +65,6 @@ int main()
     {
         cout << "Index out of range!" << endl;
     }
+    */
     return 0;
 }
