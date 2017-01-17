@@ -1,5 +1,6 @@
 #include <cmath>
 #include "IntVector.h"
+#include <iostream>
 
 using namespace std;
 
@@ -9,20 +10,25 @@ IntVector::IntVector() {
     // TODO: Implement
     count = 0;
     capacity = INITIAL_CAPACITY;
-    array = new int[capacity];
+    array = new int[INITIAL_CAPACITY];
 }
 
 IntVector::IntVector(int size, int value) {
     // TODO: Implement
-    capacity *= 2;
-    int* tmpArray = new int[capacity];
 
-    for(int i = 0; i < size; i++)
+   /// capacity *= 2;
+    ///int* tmpArray = new int[capacity];
+
+    array = new int[INITIAL_CAPACITY]; ///NÝTT
+    capacity = INITIAL_CAPACITY; ///NÝTT
+    count = size; ///NÝTT
+
+    for(int i = 0; i < size; i++)///setti inn i < size en það var i < 10
     {
-        tmpArray[i] = array[i];
+        array[i] = value; /// var svona : tmpArray[i] = array[i];
     }
-    delete [] array;
-    array = tmpArray;
+    ///delete [] array;
+    ///array = tmpArray;
 }
 
 IntVector::IntVector(const IntVector& vec)
@@ -37,6 +43,10 @@ IntVector::IntVector(const IntVector& vec)
 
 IntVector::~IntVector() {
     // TODO: Implement
+    if(array != NULL)
+    {
+        delete[] array;
+    }
 }
 
 // Public member functions
@@ -51,13 +61,14 @@ void IntVector::insert(int index, int elem) {
 
 int IntVector::at(int index) const {
     // TODO: Implement
+        /*
 if(index > capacity)
 {
     throw
     IndexOutOfRangeException();
     return 0;
 }
-else
+else*/
 {
     return array[index];
 }
@@ -65,6 +76,7 @@ else
 
 void IntVector::set_value_at(int index, int elem) {
     // TODO: Implement
+
     array[index] = elem;
 }
 
@@ -76,7 +88,24 @@ int IntVector::size() const {
 
 bool IntVector::empty() const {
     // TODO: Implement
-    return false;
+
+    int count;
+    for(int i = 0; i < capacity; i++)
+    {
+        if(array[i] == 0)
+        {
+            count++;
+        }
+    }
+    if(count > 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+
 }
 
 void IntVector::remove_at(int index) {
@@ -110,6 +139,7 @@ void IntVector::operator=(const IntVector& vec) {
 
 int& IntVector::operator[] (int index) {
     // TODO: Throw exception if index is out of range.
+
     return array[index];
 }
 
