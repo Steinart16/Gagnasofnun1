@@ -28,7 +28,7 @@ int main()
 
     cout << "After adding to the first vector:" << endl;
     cout << v1 << endl;
-/*
+
     for(int i = 0; i < 10; i++)
     {
         v1.pop_back();
@@ -36,7 +36,7 @@ int main()
 
     cout << "After popping elements from first vector:" << endl;
     cout << v1 << endl;
-
+/*
     IntVector v3(v2); // Calls the copy constructor
     cout << "Third vector:" << endl;
     cout << v3 << endl;

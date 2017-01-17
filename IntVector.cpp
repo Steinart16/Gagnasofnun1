@@ -121,11 +121,11 @@ bool IntVector::empty() const {
     }
     if(count > 0)
     {
-        return true;
+        return false;
     }
     else
     {
-        return false;
+        return true;
     }
 
 }
@@ -136,6 +136,15 @@ void IntVector::remove_at(int index) {
 
 int IntVector::pop_back() {
     // TODO: Implement
+    if(empty()==true)
+    {
+        throw
+        EmptyException();
+    }
+    else
+    {
+
+    }
     return 0;
 }
 

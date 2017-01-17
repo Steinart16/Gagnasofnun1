@@ -63,11 +63,13 @@ class IntVector
 		// If the vector is empty, the function throws
 		// EmptyException.
 		int  pop_back();
+
 		// Inserts 'elem' into the list at position 'index'. All elements to the
 		// right of index are shifted one position to the right.
 		// If index is out of range, the function throws
 		// IndexOutOfRangeException.
 		void insert(int index, int elem);
+
 		// Removes the element at position 'index'. All elements to the
 		// right of index are shifted one position to the left.
 		// If index is out of range, the function throws
