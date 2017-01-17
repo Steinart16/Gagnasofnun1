@@ -15,20 +15,25 @@ class IntVector
 	private:
 		// A pointer to an array that stores the vector's values.
 		int* array;
+
 		// Contains the size of array (i.e. the maximum number of elements
 		// that the vector can store using this array).
 		int  capacity;
+
 		// The number of array positions currently holding values.
 		int  count;
 
 	public:
 		// Initializes an empty vector.
 		IntVector();
+
 		// Initializes a vector with 'size' copies of the element 'value'.
 		// If 'size' is less than 0, the initalized vector is empty.
 		IntVector(int size, int value = 0);
+
 		// A copy constructor.
 		IntVector(const IntVector& vec);
+
 		// A destructor.
 		~IntVector();
 

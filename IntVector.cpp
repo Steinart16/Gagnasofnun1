@@ -51,8 +51,16 @@ void IntVector::insert(int index, int elem) {
 
 int IntVector::at(int index) const {
     // TODO: Implement
-
+if(index > capacity)
+{
+    throw
+    IndexOutOfRangeException();
+    return 0;
+}
+else
+{
     return array[index];
+}
 }
 
 void IntVector::set_value_at(int index, int elem) {
