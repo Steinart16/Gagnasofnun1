@@ -97,14 +97,12 @@ void IntVector::insert(int index, int elem) {
 
 int IntVector::at(int index) const {
     // TODO: Implement
-        /*
-if(index > capacity)
+
+if(index > count)
 {
-    throw
-    IndexOutOfRangeException();
-    return 0;
+    throw IndexOutOfRangeException();
 }
-else*/
+else
 {
     return array[index];
 }
@@ -149,8 +147,7 @@ void IntVector::remove_at(int index) {
 
     if(index > capacity)
     {
-        throw
-        IndexOutOfRangeException();
+        throw IndexOutOfRangeException();
     }
     else
     {
