@@ -15,20 +15,23 @@ IntVector::IntVector() {
 
 IntVector::IntVector(int size, int value) {
     // TODO: Implement
-
-   /// capacity *= 2;
-    ///int* tmpArray = new int[capacity];
-
-    array = new int[INITIAL_CAPACITY]; ///NÝTT
-    capacity = INITIAL_CAPACITY; ///NÝTT
-    count = size; ///NÝTT
-
-    for(int i = 0; i < size; i++)///setti inn i < size en það var i < 10
+    if(size> INITIAL_CAPACITY)
     {
-        array[i] = value; /// var svona : tmpArray[i] = array[i];
+        capacity = size;
     }
-    ///delete [] array;
-    ///array = tmpArray;
+    else
+    {
+        capacity = INITIAL_CAPACITY;
+    }
+
+    array = new int[capacity];
+    count = size;
+
+    for(int i = 0; i < size; i++)
+    {
+        array[i] = value;
+    }
+
 }
 
 void IntVector::doubleArray()
@@ -80,7 +83,7 @@ void IntVector::push_back(int elem) {
 void IntVector::insert(int index, int elem) {
     // TODO: Implement
 
-    if(index > capacity)
+    if(index < 0||index > capacity)
     {
         throw
         IndexOutOfRangeException();
@@ -130,7 +133,7 @@ bool IntVector::empty() const {
 void IntVector::remove_at(int index) {
     // TODO: Implement
 
-    if(index > capacity)
+    if(index < 0 || index > capacity)
     {
         throw IndexOutOfRangeException();
     }
@@ -162,6 +165,7 @@ void IntVector::clear() {
     // TODO: Implement
 
 //    array == count();
+    count = 0;
 }
 
 // Overloaded operators

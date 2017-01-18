@@ -28,7 +28,6 @@ int main()
 
     cout << "After adding to the first vector:" << endl;
     cout << v1 << endl;
-
     for(int i = 0; i < 10; i++)
     {
         v1.pop_back();
@@ -52,7 +51,7 @@ int main()
     cout << "Fourth vector:" << endl;
     cout << v4 << endl;
 
-    v4.push_back(100);
+    v4.push_back(-5);
     cout << "Fourth vector:" << endl;
     cout << v4 << endl;
 
