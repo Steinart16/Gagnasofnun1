@@ -42,7 +42,7 @@ int main()
 
     cout << "Modifying second vector:" << endl;
     v2.insert(3, 1337);
-    v2.remove_at(-5);
+    v2.remove_at(8);
     cout << v2 << endl;
 
     IntVector v4;
@@ -58,9 +58,7 @@ int main()
     cout << "Lets finally try to access an element not in the vector: " << endl;
     try
     {
-
         cout << v4.at(50);
-
     }
     catch (IndexOutOfRangeException)
     {

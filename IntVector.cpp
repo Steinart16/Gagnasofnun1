@@ -81,35 +81,45 @@ void IntVector::push_back(int elem) {
 
 void IntVector::insert(int index, int elem) {
 
-    if(index < 0||index > capacity)
+
+    if(count == capacity)
     {
-        throw
-        IndexOutOfRangeException();
+        doubleArray();
+    }
+    if(index < 0 || index > count )
+    {
+        throw IndexOutOfRangeException();
     }
     else
     {
         for(int i = count-1; i >= index; i--)
         {
-            array[i+1] = array[i];
+            int tmp = array[i];
+            array[i+1] = tmp;
         }
         array[index] = elem;
+        count++;
     }
 }
 
 int IntVector::at(int index) const {
 
-if(index > count)
-{
-    throw IndexOutOfRangeException();
-}
-else
-{
-    return array[index];
-}
+    if(index >= count || index < 0)
+    {
+        throw IndexOutOfRangeException();
+    }
+    else
+    {
+        return array[index];
+    }
 }
 
 void IntVector::set_value_at(int index, int elem) {
 
+    if(index >= count ||index < 0 )
+    {
+        throw IndexOutOfRangeException();
+    }
     array[index] = elem;
 }
 
@@ -126,25 +136,25 @@ bool IntVector::empty() const {
 
 void IntVector::remove_at(int index) {
 
-    if(index < 0 || index > capacity)
+    if(index < 0 || index >= size() || count == 0)
     {
         throw IndexOutOfRangeException();
     }
     else
     {
-        for(int i = index-1; i < count; i++)
+        for(int i = index; i < count; i++)
         {
             array[i] = array[i+1];
         }
+        count--;
     }
 }
 
 int IntVector::pop_back() {
 
-    if(empty()==true)
+    if(empty())
     {
-        throw
-        EmptyException();
+        throw EmptyException();
     }
     else
     {
@@ -175,7 +185,7 @@ void IntVector::operator=(const IntVector& vec) {
 
 int& IntVector::operator[] (int index) {
 
-    if(index < 0 || index > capacity)
+    if(index < 0 || index >= count)
     {
         throw IndexOutOfRangeException();
     }
