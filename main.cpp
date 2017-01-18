@@ -42,7 +42,7 @@ int main()
 
     cout << "Modifying second vector:" << endl;
     v2.insert(3, 1337);
-    v2.remove_at(8);
+    v2.remove_at(-5);
     cout << v2 << endl;
 
     IntVector v4;
@@ -51,7 +51,7 @@ int main()
     cout << "Fourth vector:" << endl;
     cout << v4 << endl;
 
-    v4.push_back(-5);
+    v4.push_back(100);
     cout << "Fourth vector:" << endl;
     cout << v4 << endl;
 

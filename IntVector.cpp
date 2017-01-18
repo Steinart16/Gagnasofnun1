@@ -7,14 +7,14 @@ using namespace std;
 // Constructors
 
 IntVector::IntVector() {
-    // TODO: Implement
+
     count = 0;
     capacity = INITIAL_CAPACITY;
     array = new int[INITIAL_CAPACITY];
 }
 
 IntVector::IntVector(int size, int value) {
-    // TODO: Implement
+
     if(size> INITIAL_CAPACITY)
     {
         capacity = size;
@@ -34,8 +34,8 @@ IntVector::IntVector(int size, int value) {
 
 }
 
-void IntVector::doubleArray()
-{
+void IntVector::doubleArray(){
+
     capacity *= 2;
     int* tmpArray = new int[capacity];
 
@@ -49,6 +49,7 @@ void IntVector::doubleArray()
 
 IntVector::IntVector(const IntVector& vec)
     : capacity(vec.capacity), count(vec.count) {
+
     array = new int[capacity];
 
     for(int i = 0; i < count; i++) {
@@ -58,7 +59,7 @@ IntVector::IntVector(const IntVector& vec)
 
 
 IntVector::~IntVector() {
-    // TODO: Implement
+
     if(array != NULL)
     {
         delete[] array;
@@ -66,9 +67,7 @@ IntVector::~IntVector() {
 }
 
 // Public member functions
-
 void IntVector::push_back(int elem) {
-    // TODO: Implement
 
     if(count == capacity)
     {
@@ -81,7 +80,6 @@ void IntVector::push_back(int elem) {
 }
 
 void IntVector::insert(int index, int elem) {
-    // TODO: Implement
 
     if(index < 0||index > capacity)
     {
@@ -99,7 +97,6 @@ void IntVector::insert(int index, int elem) {
 }
 
 int IntVector::at(int index) const {
-    // TODO: Implement
 
 if(index > count)
 {
@@ -112,26 +109,22 @@ else
 }
 
 void IntVector::set_value_at(int index, int elem) {
-    // TODO: Implement
 
     array[index] = elem;
 }
 
 int IntVector::size() const {
-    // TODO: Implement
 
     return count;
 }
 
 bool IntVector::empty() const {
-    // TODO: Implement
 
     return count == 0;
 
 }
 
 void IntVector::remove_at(int index) {
-    // TODO: Implement
 
     if(index < 0 || index > capacity)
     {
@@ -147,7 +140,6 @@ void IntVector::remove_at(int index) {
 }
 
 int IntVector::pop_back() {
-    // TODO: Implement
 
     if(empty()==true)
     {
@@ -162,14 +154,11 @@ int IntVector::pop_back() {
 }
 
 void IntVector::clear() {
-    // TODO: Implement
 
-//    array == count();
     count = 0;
 }
 
 // Overloaded operators
-
 void IntVector::operator=(const IntVector& vec) {
     if(capacity < vec.capacity) {
         delete [] array;
@@ -185,12 +174,16 @@ void IntVector::operator=(const IntVector& vec) {
 }
 
 int& IntVector::operator[] (int index) {
-    // TODO: Throw exception if index is out of range.
 
+    if(index < 0 || index > capacity)
+    {
+        throw IndexOutOfRangeException();
+    }
     return array[index];
 }
 
 ostream& operator<< (ostream& out, const IntVector& rhs) {
+
     for(int i = 0; i < rhs.size(); i++) {
 		if(i > 0) {
 			out << " ";
