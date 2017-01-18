@@ -123,22 +123,7 @@ int IntVector::size() const {
 bool IntVector::empty() const {
     // TODO: Implement
 
-    int count;
-    for(int i = 0; i < capacity; i++)
-    {
-        if(array[i] == 0)
-        {
-            count++;
-        }
-    }
-    if(count > 0)
-    {
-        return false;
-    }
-    else
-    {
-        return true;
-    }
+    return count == 0;
 
 }
 
@@ -160,8 +145,6 @@ void IntVector::remove_at(int index) {
 
 int IntVector::pop_back() {
     // TODO: Implement
-    ///int* tmpArray = new int[capacity];
-    ///tmpArray = array;
 
     if(empty()==true)
     {
@@ -170,6 +153,7 @@ int IntVector::pop_back() {
     }
     else
     {
+        return array[--count];
 
     }
 }
@@ -177,10 +161,7 @@ int IntVector::pop_back() {
 void IntVector::clear() {
     // TODO: Implement
 
-    for(int i = 0; i < count; i++)
-    {
-         array[i] = NULL;
-    }
+//    array == count();
 }
 
 // Overloaded operators

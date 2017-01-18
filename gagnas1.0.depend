@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1484703305 source:c:\users\steinar Þ\desktop\computer science\2017\gagnaskipan\lab1.1\gagnasofnun1\intvector.cpp
+1484704069 source:c:\users\steinar Þ\desktop\computer science\2017\gagnaskipan\lab1.1\gagnasofnun1\intvector.cpp
 	<cmath>
 	"IntVector.h"
 	<iostream>
