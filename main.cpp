@@ -36,14 +36,15 @@ int main()
 
     cout << "After popping elements from first vector:" << endl;
     cout << v1 << endl;
-/*
+
     IntVector v3(v2); // Calls the copy constructor
     cout << "Third vector:" << endl;
     cout << v3 << endl;
 
     cout << "Modifying second vector:" << endl;
     v2.insert(3, 1337);
-    v2.remove_at(8);
+      cout << v2 << endl;
+/*    v2.remove_at(8);
     cout << v2 << endl;
 
     IntVector v4;

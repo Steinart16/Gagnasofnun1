@@ -79,6 +79,20 @@ void IntVector::push_back(int elem) {
 
 void IntVector::insert(int index, int elem) {
     // TODO: Implement
+
+    if(index > capacity)
+    {
+        throw
+        IndexOutOfRangeException();
+    }
+    else
+    {
+        for(int i = count-1; i >= index; i--)
+        {
+            array[i+1] = array[i];
+        }
+        array[index] = elem;
+    }
 }
 
 int IntVector::at(int index) const {
@@ -143,7 +157,7 @@ int IntVector::pop_back() {
     }
     else
     {
-
+        ///TODO: GERA POP_BACK!
     }
     return 0;
 }
