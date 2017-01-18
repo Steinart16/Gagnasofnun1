@@ -75,6 +75,7 @@ class IntVector
 		// If index is out of range, the function throws
 		// IndexOutOfRangeException.
 		void remove_at(int index);
+
 		// Removes all the elements from the list
 		void clear();
 

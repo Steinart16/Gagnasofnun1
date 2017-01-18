@@ -1,13 +1,13 @@
 # depslib dependency file v1.0
-1484698485 source:c:\users\steinar Ş\desktop\computer science\2017\gagnaskipan\lab1.1\gagnasofnun1\intvector.cpp
+1484700108 source:c:\users\steinar Ş\desktop\computer science\2017\gagnaskipan\lab1.1\gagnasofnun1\intvector.cpp
 	<cmath>
 	"IntVector.h"
 	<iostream>
 
-1484696524 c:\users\steinar Ş\desktop\computer science\2017\gagnaskipan\lab1.1\gagnasofnun1\intvector.h
+1484699388 c:\users\steinar Ş\desktop\computer science\2017\gagnaskipan\lab1.1\gagnasofnun1\intvector.h
 	<iostream>
 
-1484698108 source:c:\users\steinar Ş\desktop\computer science\2017\gagnaskipan\lab1.1\gagnasofnun1\main.cpp
+1484700196 source:c:\users\steinar Ş\desktop\computer science\2017\gagnaskipan\lab1.1\gagnasofnun1\main.cpp
 	<iostream>
 	"IntVector.h"
 

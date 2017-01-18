@@ -43,8 +43,7 @@ int main()
 
     cout << "Modifying second vector:" << endl;
     v2.insert(3, 1337);
-      cout << v2 << endl;
-/*    v2.remove_at(8);
+    v2.remove_at(8);
     cout << v2 << endl;
 
     IntVector v4;
@@ -66,6 +65,6 @@ int main()
     {
         cout << "Index out of range!" << endl;
     }
-    */
+
     return 0;
 }

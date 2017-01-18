@@ -146,6 +146,19 @@ bool IntVector::empty() const {
 
 void IntVector::remove_at(int index) {
     // TODO: Implement
+
+    if(index > capacity)
+    {
+        throw
+        IndexOutOfRangeException();
+    }
+    else
+    {
+        for(int i = index-1; i < count; i++)
+        {
+            array[i] = array[i+1];
+        }
+    }
 }
 
 int IntVector::pop_back() {
@@ -164,6 +177,11 @@ int IntVector::pop_back() {
 
 void IntVector::clear() {
     // TODO: Implement
+
+    for(int i = 0; i < count; i++)
+    {
+         array[i] = NULL;
+    }
 }
 
 // Overloaded operators
