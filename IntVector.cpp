@@ -160,6 +160,9 @@ void IntVector::remove_at(int index) {
 
 int IntVector::pop_back() {
     // TODO: Implement
+    ///int* tmpArray = new int[capacity];
+    ///tmpArray = array;
+
     if(empty()==true)
     {
         throw
@@ -167,9 +170,8 @@ int IntVector::pop_back() {
     }
     else
     {
-        ///TODO: GERA POP_BACK!
+
     }
-    return 0;
 }
 
 void IntVector::clear() {
