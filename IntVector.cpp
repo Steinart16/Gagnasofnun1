@@ -14,7 +14,10 @@ IntVector::IntVector() {
 }
 
 IntVector::IntVector(int size, int value) {
-
+    if(size < 0)
+    {
+        size = 0;
+    }
     if(size> INITIAL_CAPACITY)
     {
         capacity = size;
@@ -47,8 +50,7 @@ void IntVector::doubleArray(){
     array = tmpArray;
 }
 
-IntVector::IntVector(const IntVector& vec)
-    : capacity(vec.capacity), count(vec.count) {
+IntVector::IntVector(const IntVector& vec) : capacity(vec.capacity), count(vec.count) {
 
     array = new int[capacity];
 
@@ -95,7 +97,7 @@ void IntVector::insert(int index, int elem) {
         for(int i = count-1; i >= index; i--)
         {
             int tmp = array[i];
-            array[i+1] = tmp;
+            array[i + 1] = tmp;
         }
         array[index] = elem;
         count++;
@@ -116,7 +118,7 @@ int IntVector::at(int index) const {
 
 void IntVector::set_value_at(int index, int elem) {
 
-    if(index >= count ||index < 0 )
+    if(index >= count || index < 0 )
     {
         throw IndexOutOfRangeException();
     }
@@ -144,7 +146,7 @@ void IntVector::remove_at(int index) {
     {
         for(int i = index; i < count; i++)
         {
-            array[i] = array[i+1];
+            array[i] = array[i + 1];
         }
         count--;
     }
@@ -158,8 +160,8 @@ int IntVector::pop_back() {
     }
     else
     {
-        return array[--count];
-
+        count--;
+        return array[count];
     }
 }
 

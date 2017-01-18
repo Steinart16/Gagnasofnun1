@@ -9,7 +9,6 @@ int main()
 
     cout << "First vector:" << endl;
     cout << v1 << endl;
-
     cout << "Second vector:" << endl;
     cout << v2 << endl;
 
